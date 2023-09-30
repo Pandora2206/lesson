@@ -1,14 +1,3 @@
-# list1 = [] # 20 elem
-# [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# 10, 9 ,8 , 7, 6,5 , 4, 3, 2, 1
-
-import random
-
-list1 = []
-r = lambda: random.randint(-100, 100)
-for i in range(20):
-    list1.append(r())  # заполнил рандомными числами
-print(list1)
 
 
 def get_max(list_input: list) -> int:
