@@ -26,3 +26,6 @@ def get_result(list_items):
     print(index_max)
 
 get_result(list_items)
+
+
+
