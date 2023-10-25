@@ -1,26 +1,45 @@
-class student:
-    name=""
-    age=""
-    grade=""
-def display_info(self):
-    pass
-def congratulate(self):
-    pass
-
-class student_1(student):
-    date="22.05"
-    name="Alex Crish"
-    grade ="9"
-    age="15"
-    birthday="22.05"
-def display_info(self):
-    return (self.name,self.grade,self.age)
-pass
-def congratulade(self):
-    if self.date==self.birthday:
-     self.age=self.age+1
-     print("с днём рождения")
+from datetime import datetime, date,time
+class Student:
+    name = ""
+    age = ""
+    grade = ""
+    b_day = False
 
 
+    def __init__(self,
+                 name,
+                 age,
+                 grade,
+                 b_day):
+
+        self.name = name
+        self.age = age
+        self.grade = grade
+        self.b_day = b_day
+
+    def display_info(self):
+        """
+        Имя: [имя],
+        Возраст: [возраст],
+        Класс: [класс]"
+        :return:
+        """
+        print(f"Имя: [{self.name}]\n",
+              f"Возраст: [{self.age}]\n",
+              f"Класс: [{self.grade}]\n")
+
+        return self.name, self.age, self.b_day, self.grade
+
+    def congratulate(self, name, age,  b_day):
+        if b_day:
+            print(f"С днём рожденья {name}")
+            print(f"Тебе сегодня {age+1}")
 
 
+student_1 = Student("Alex", 12, 6, True)
+
+student_2 = Student("Misha", 15, 9, False)
+
+info = student_1.display_info()
+
+student_2.congratulate(*info[0:3])
