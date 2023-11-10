@@ -16,8 +16,18 @@ class ElectronicsStore:
             else:
                 return False
 
-    def get_product(self, name: str, quantity: int):
-        pass
+    def get_product(self, name: str, quantity: int, balance: float):
+        if self.check_product(name, quantity):
+            for product in self.product_list:
+                if product.name == name:
+                    if balance > quantity * product.price:
+                        product.quantity -= quantity
+                        return Product(getattr(product, 'name'),
+                                       getattr(product, 'price'),
+                                       quantity), quantity * product.price
+
+        else:
+            return
 
     def display_products(self):
         """
@@ -29,10 +39,7 @@ class ElectronicsStore:
             return
 
         for product in self.product_list:
-            product.display_nfo()
-
+            product.display_info()
 
     def __init__(self, name: str):
         self.store_name = name
-
-

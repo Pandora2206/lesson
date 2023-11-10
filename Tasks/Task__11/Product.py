@@ -3,7 +3,7 @@ class Product:
     price = 0
     quantity = 0
 
-    def display_nfo(self):
+    def display_info(self):
         print("++++++++++++++++++++++++")
         print(self.name)
         print(self.price)
